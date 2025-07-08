@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className='flex flex-col text-gray-600'>
               <div onClick={() => setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
                 <img className='h-4 rotate-180 ' src={assets.dropdown_icon} alt="" />
-                <p>Back</p>
+                <p>Quay lại</p>
               </div>
               <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/'>TRANG CHỦ</NavLink>
               <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/collection'>SẢN PHẨM</NavLink>

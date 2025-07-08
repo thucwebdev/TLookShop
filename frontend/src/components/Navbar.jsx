@@ -69,10 +69,10 @@ const Navbar = () => {
                 <img className='h-4 rotate-180 ' src={assets.dropdown_icon} alt="" />
                 <p>Back</p>
               </div>
-              <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/'>HOME</NavLink>
-              <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/collection'>COLLECTION</NavLink>
-              <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/about'>ABOUT</NavLink>
-              <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/contact'>CONTACT</NavLink>
+              <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/'>TRANG CHỦ</NavLink>
+              <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/collection'>SẢN PHẨM</NavLink>
+              <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/about'>GIỚI THIỆU</NavLink>
+              <NavLink onClick = {() => setVisible(false)} className='py-2 pl-6 border' to='/contact'>LIÊN HỆ</NavLink>
             </div>
 
         </div>

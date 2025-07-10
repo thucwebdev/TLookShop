@@ -7,7 +7,7 @@ const Contact = () => {
 
   const [state, handleSubmit] = useForm("xeokwkeg");
   if (state.succeeded) {
-      return <p>Thanks for your submission!</p>;
+      return <p>Cảm ơn bạn đã gửi lời nhắn cho Shop!</p>;
   }
 
   return (

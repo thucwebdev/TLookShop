@@ -45,7 +45,7 @@ const List = ({ token }) => {
 
   return (
     <>
-      <p className="mb-2">Danh sách tất cả sản phẩm</p>
+      <p className="text-2xl font-bold text-gray-800 mb-4 text-center">Danh sách tất cả sản phẩm</p>
       <div className="flex flex-col gap-2">
         {/* List Table Tiltle */}
         <div className="hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center border border-gray-300 py-1 px-2 bg-gray-100 text-sm">
@@ -59,18 +59,18 @@ const List = ({ token }) => {
 
         {list.map((item, index) => (
           <div
-            className="grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center border border-gray-300 text-sm gap-2 py-1 px-2"
+            className="grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center border border-gray-300 text-sm gap-2 py-1 px-2 hover:bg-gray-100 transition ease-in-out"
             key={index}
           >
             <img className="w-20" src={item.image[0]} alt="" />
-            <p>{item.name}</p>
-            <p>{item.category}</p>
-            <p>
+            <p className="text-orange-600">{item.name}</p>
+            <p className="text-blue-600">{item.category}</p>
+            <p className="text-red-600">
               {item.price.toLocaleString('vi-VN')}
               {currency}
             </p>
             <p onClick={() => removeProduct(item._id)} className="text-right md:text-center cursor-pointer text-lg flex justify-center ">
-              <img className="w-6" src={assets.delete_icon} alt="" />
+              <img className="w-10 hover:bg-gray-300 p-2 rounded-[9999px] transition ease-in-out" src={assets.delete_icon} alt="" />
             </p>
           </div>
         ))}

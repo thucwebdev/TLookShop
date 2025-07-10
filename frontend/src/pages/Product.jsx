@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import { ShopContext } from '../context/ShopContext';
+import {ShopContext}  from '../context/ShopContext';
 import { assets } from '../assets/assets'
 import RelatedProducts from '../components/RelatedProducts';
 const Product = () => {
@@ -11,19 +11,36 @@ const Product = () => {
   const [image , setImage] = useState('');
   const [size, setSize] = useState('');
 
-  const fetchProductData = async () => {
-    products.map((item) => {
-      if(item._id === productId){
-        setProductData(item);
-        setImage(item.image[0]);
-        return null;
-      }
-    });
-  }
+  // const fetchProductData = async () => {
+  //   console.log("ProductIdasdasdsd", productId);
+    
+  //   products.map((item) => {
+  //     if(item._id == productId){
+  //       setProductData(item);
+  //       setImage(item.image[0]);
+  //       return null;
+  //     }
+  //   });
+  // }
 
-  useEffect(() =>{
+  // useEffect(() =>{
+  //   console.log("ProductId");
+  //   fetchProductData();
+  // },[productId]);
+  const fetchProductData = async () => {
+    if (products && products.length > 0) {
+      const product = products.find((item) => item._id === productId);
+      if (product) {
+        setProductData(product);
+        setImage(product.image[0]);
+      }
+    }
+  };
+
+  useEffect(() => {
     fetchProductData();
-  },[productId]);
+  }, [productId, products]);
+console.log("Product Data123123", productData);
 
 
   return productData ? (

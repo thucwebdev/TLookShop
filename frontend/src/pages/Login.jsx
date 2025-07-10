@@ -7,9 +7,9 @@ import { useEffect } from 'react';
 
 
 const Login = () => {
-    
+  
   const [currentState , setCurrentState] = useState('Đăng nhập');
-  const {token, setToken , navigate , backendUrl} = useContext(ShopContext)
+  const {token, setToken , navigate , backendUrl , setUser} = useContext(ShopContext)
   const [name,setName] = useState('');
   const [password,setPassword] = useState('');
   const [email,setEmail] = useState('');
@@ -36,7 +36,9 @@ const Login = () => {
         const response  = await axios.post(backendUrl + '/api/user/login' , {email,password});
         if(response.data.success){
           setToken(response.data.token);
+          setUser(response.data.user);
           localStorage.setItem('token' , response.data.token);
+          localStorage.setItem('user' , JSON.stringify(response.data.user));
         } else {
           toast.error(response.data.message);
         }

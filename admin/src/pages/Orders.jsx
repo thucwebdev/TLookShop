@@ -76,10 +76,14 @@ const Orders = ({token}) => {
                 <div className='flex flex-col gap-2'>
                   <p className='text-sm sm:text-[15px]'><strong className='mr-2'>Sản phẩm : </strong>{order.items.length}</p>
                   <p className='mt-3'><strong className='mr-2'>Phương thức thanh toán : </strong>{order.paymentMethod} </p>
-                  <p><strong className='mr-2'>Thanh toán : </strong>{order.payment ? 'Đã thanh toán' : 'Chưa thanh toán'}</p>
+                  <p><strong className='mr-2'>Thanh toán : </strong>
+                    <span className={`px-2 py-1 rounded text-sm ${order.payment ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}`}>
+                      {order.payment ? 'Đã thanh toán' : 'Chưa thanh toán'}
+                    </span>
+                  </p>
                   <p><strong className='mr-2'>Ngày mua : </strong>{new Date(order.createdAt).toLocaleDateString('vi-VN')} </p>
                 </div>
-                <p className='text-sm sm:text-[15px] '><strong className='mr-2'>Tổng tiền : </strong><span className='bg-green-100 text-green-800'>{order.amount.toLocaleString('vi-VN')}{currency}</span></p>
+                <p className='text-sm sm:text-[15px] '><strong className='mr-2'>Tổng tiền : </strong><span className='bg-orange-100 text-orange-800'>{order.amount.toLocaleString('vi-VN')}{currency}</span></p>
                 <select onChange = {(event) => statusHandler(event , order._id)} value={order.status} className='p-2 font-semibold cursor-pointer'>
                     <option value="Đã đặt hàng">Đã đặt hàng</option>
                     <option value="Đang đóng gói">Đang đóng gói</option>

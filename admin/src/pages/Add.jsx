@@ -64,7 +64,7 @@ const Add = ({token}) => {
     <div>
         <form onSubmit={onSubmitHandler} className='flex flex-col w-full items-start gap-3'>
             <div>
-              <p className='mb-2'>Tải lên hình ảnh</p>
+              <p className='mb-2 font-bold text-gray-700'>Tải lên hình ảnh</p>
 
               <div className='flex gap-2'>
                 <label htmlFor="image1">
@@ -87,19 +87,19 @@ const Add = ({token}) => {
             </div>
 
             <div className='w-full'>
-              <p className='mb-2'>Tên sản phẩm</p>
+              <p className='mb-2 font-bold text-gray-700'>Tên sản phẩm</p>
               <input onChange={(e) => setName(e.target.value)} value={name} className='w-full max-w-[500px] px-3 py-2' type="text" placeholder='Nhập tên sản phẩm' required />
             </div>
 
             <div className='w-full'>
-              <p className='mb-2'>Mô tả sản phẩm</p>
+              <p className='mb-2 font-bold text-gray-700'>Mô tả sản phẩm</p>
               <textarea onChange={(e) => setDescription(e.target.value)} value={description} className='w-full max-w-[500px] px-3 py-2' type="text" placeholder='Nhập nội dung mô tả sản phẩm' required />
             </div>
 
             <div className='flex flex-col sm:flex-row gap-2 w-full sm:gap-8'>
 
                 <div>
-                  <p className='mb-2'>Thương hiệu</p>
+                  <p className='mb-2 font-bold text-gray-700'>Thương hiệu</p>
                   <select onChange={(e) => setCategory(e.target.value)}  className='w-full px-3 py-2 '>
                       <option value="Yonex">Yonex</option>
                       <option value="Victor">Victor</option>
@@ -108,7 +108,7 @@ const Add = ({token}) => {
                 </div>
 
                  <div>
-                  <p className='mb-2'>Phong cách chơi</p>
+                  <p className='mb-2 font-bold text-gray-700'>Phong cách chơi</p>
                   <select onChange={(e) => setSubCategory(e.target.value)} className='w-full px-3 py-2 '>
                       <option value="Attack">Tấn công</option>
                       <option value="Defense">Phòng thủ , phản tạt</option>
@@ -117,25 +117,25 @@ const Add = ({token}) => {
                 </div>
 
                 <div>
-                  <p className='mb-2'>Giá sản phẩm</p>
+                  <p className='mb-2 font-bold text-gray-700'>Giá sản phẩm</p>
                   <input onChange={(e) => setPrice(e.target.value)} value={price} className='w-full px-3 py-2 sm:w-[120px]' type="Number" placeholder='...đ' />
                 </div>
 
             </div>
 
             <div>
-              <p className='mb-2'>Trọng lượng sản phẩm</p>
+              <p className='mb-2 text-gray-700 font-bold'>Trọng lượng sản phẩm</p>
               <div className='flex gap-3'>
                 <div onClick={() => setSizes(prev =>prev.includes("3U") ? prev.filter(item => item !== "3U") : [...prev, "3U"])}>
-                  <p className={`${sizes.includes("3U") ? "bg-orange-200" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>3U</p>
+                  <p className={`${sizes.includes("3U") ? "bg-orange-200" : "bg-slate-200"} px-3 py-1 rounded cursor-pointer`}>3U</p>
                 </div>
 
                 <div onClick={() => setSizes(prev =>prev.includes("4U") ? prev.filter(item => item !== "4U") : [...prev, "4U"])}>
-                  <p className={`${sizes.includes("4U") ? "bg-orange-200" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>4U</p>
+                  <p className={`${sizes.includes("4U") ? "bg-orange-200" : "bg-slate-200"} px-3 py-1 rounded cursor-pointer`}>4U</p>
                 </div>
 
                 <div onClick={() => setSizes(prev =>prev.includes("5U") ? prev.filter(item => item !== "5U") : [...prev, "5U"])}>
-                  <p className={`${sizes.includes("5U") ? "bg-orange-200" : "bg-slate-200"} px-3 py-1 cursor-pointer`}>5U</p>
+                  <p className={`${sizes.includes("5U") ? "bg-orange-200" : "bg-slate-200"} px-3 py-1 rounded cursor-pointer`}>5U</p>
                 </div>
               </div>
             </div>
@@ -145,7 +145,7 @@ const Add = ({token}) => {
               <label className='cursor-pointer' htmlFor="bestseller">Thêm vào danh sách bán chạy nhất</label>
             </div>
 
-            <button type='submit' className='w-28 py-3 mt-4 bg-black text-white cursor-pointer'>Thêm</button>
+            <button type='submit' className='w-28 py-3 mt-4 bg-black text-white cursor-pointer rounded-lg'>Thêm</button>
 
         </form>
     </div>

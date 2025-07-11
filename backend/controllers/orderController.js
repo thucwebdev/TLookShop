@@ -151,6 +151,9 @@ const userOrders = async (req, res) => {
 const updateStatus = async (req, res) => {
   try {
     const { orderId, status } = req.body;
+    if (status === "Đã giao hàng") {
+      await orderModel.findByIdAndUpdate(orderId, { payment: true });
+    }
     await orderModel.findByIdAndUpdate(orderId, { status });
     res.json({ success: true, message: "Trạng thái đã cập nhật" });
   } catch (error) {

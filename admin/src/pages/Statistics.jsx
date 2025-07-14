@@ -192,7 +192,7 @@ const Statistics = ({ token }) => {
 
       {/* Overall Statistics Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-md">
+        <div className="bg-blue-500 bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6 rounded-lg shadow-md">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-blue-100 text-sm">Tổng doanh thu</p>
@@ -211,7 +211,7 @@ const Statistics = ({ token }) => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-lg shadow-md">
+        <div className="bg-green-500 bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-lg shadow-md">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-green-100 text-sm">Tổng đơn hàng</p>
@@ -229,7 +229,7 @@ const Statistics = ({ token }) => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-md">
+        <div className="bg-purple-500 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-md">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-purple-100 text-sm">Tổng khách hàng</p>
@@ -243,7 +243,7 @@ const Statistics = ({ token }) => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-md">
+        <div className="bg-orange-500 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-md">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-orange-100 text-sm">Tổng sản phẩm</p>

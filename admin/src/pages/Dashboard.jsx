@@ -67,7 +67,7 @@ const Dashboard = ({ token }) => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-green-500 bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-green-100 text-sm">Tổng đơn hàng</p>
@@ -81,7 +81,7 @@ const Dashboard = ({ token }) => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-purple-500 bg-gradient-to-r from-purple-500 to-purple-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-purple-100 text-sm">Tổng khách hàng</p>
@@ -95,7 +95,7 @@ const Dashboard = ({ token }) => {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
+        <div className="bg-orange-500 bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6 rounded-lg shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-orange-100 text-sm">Tổng sản phẩm</p>

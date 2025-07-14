@@ -42,7 +42,6 @@ const Product = () => {
   }, [productId, products]);
 console.log("Product Data123123", productData);
 
-
   return productData ? (
 
     <div className='border-t-2 pt-10 transition-opacity ease-in duration-500 opacity-100'>
@@ -103,30 +102,7 @@ console.log("Product Data123123", productData);
           <p className='border px-5 py-3 text-sm'>Đánh giá (222)</p>
         </div>
         <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
-           <p>1. Giới thiệu <b>Vợt Cầu Lông Victor Ryuga TD/C chính hãng</b>
--  <b>Vợt Cầu Lông Victor Ryuga TD/C chính hãng</b> là mẫu vợt của Victor được ra mắt trong thời gian gần đây với sức mạnh tấn công được gia tăng. Ryuga TD vẫn giữ được linh hồn thiên công, với thiết kế hầm hố, smash uy lực, nổi trội về độ nặng đầu, thân cứng với phiên bản 4U phù hợp cho người chơi có trình độ trung bình trở lên và cần thời gian chơi để có thể làm quen và kiểm soát. Riêng bản 3U với thân rất cứng chỉ nên được dùng cho người chơi có trình độ khá trở lên, cần lực cổ tay khỏe.
-
-- Đặc biệt, với dòng vợt phiên bản mới được tích hợp thêm nhiều công nghệ hiện đại, tiên tiến nhất như : POWER BOX, SEVEN-SIX, PYROFIL, HARD CORE TECNOLOGY, FREE CORE, WES 2.0 mang đến người trên thêm nhiều trải nghiệm mới nhất.</p>           
-            <p>2. Thông số Vợt Cầu Lông Victor Ryuga TD/C chính hãng
-- Thương hiệu: Victor
-
-- Điểm cân bằng: Khoảng 298mm
-
-- Độ cứng: Cứng (4U) và rất cứng (3U)
-
-- Khung vợt: High Resilience Modulus Graphite+HARD CORED TECHNOLOGY
-
-- Thân vợt: High Resilience Modulus Graphite+PYROFIL+6.8 SHAFT
-
-- Trọng lượng: 3U, 4U
-
-- Chu vi cán vợt: 4UG5, 3UG6
-
-- Sức căng tối đa: 3U ≦ 30 lbs (13.5 Kg)
-
-                             4U ≦ 29 lbs (13 Kg)
-
-- Chiều dài tổng thể: 675mm</p>
+          <p>{productData.description}</p>
         </div>              
       </div>
 

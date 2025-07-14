@@ -3,6 +3,7 @@ import {
   loginUser,
   registerUser,
   adminLogin,
+  createUser,
   getAllUsers,
   getUserById,
   updateUser,
@@ -26,6 +27,7 @@ userRouter.put("/profile", authUser, updateUserProfile);
 userRouter.get("/current", authUser, getCurrentUser);
 
 // route admin
+userRouter.post("/admin/users", adminAuth, createUser);
 userRouter.get("/admin/users", adminAuth, getAllUsers);
 userRouter.get("/admin/users/:userId", adminAuth, getUserById);
 userRouter.put("/admin/users/:userId", adminAuth, updateUser);

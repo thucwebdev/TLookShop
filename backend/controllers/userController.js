@@ -90,6 +90,57 @@ const adminLogin = async (req, res) => {
   }
 };
 
+// API để tạo người dùng mới (dành cho admin)
+const createUser = async (req, res) => {
+  try {
+    const { name, email, password, phone_number, gender, address, role } = req.body;
+
+    if (!name || !email || !password) {
+      return res.json({ success: false, message: "Vui lòng nhập đầy đủ tên, email và mật khẩu" });
+    }
+ 
+    if (!validator.isEmail(email)) {
+      return res.json({ success: false, message: "Vui lòng nhập email hợp lệ" });
+    }
+   
+    if (password.length < 8) {
+      return res.json({ success: false, message: "Mật khẩu phải có ít nhất 8 ký tự" });
+    }
+    
+    const exists = await userModel.findOne({ email });
+    if (exists) {
+      return res.json({ success: false, message: "Email đã được đăng ký" });
+    }
+  
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+  
+    const newUser = new userModel({
+      name,
+      email,
+      password: hashedPassword,
+      phone_number: phone_number || "",
+      gender: gender || "",
+      address: address || "",
+      role: role || "user",
+    });
+
+    const user = await newUser.save();
+  
+    const userResponse = await userModel.findById(user._id).select("-password -cartData");
+
+    res.json({ 
+      success: true, 
+      message: "Tạo người dùng thành công", 
+      user: userResponse 
+    });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
+
+
 // API để lấy danh sách tất cả người dùng (dành cho admin)
 const getAllUsers = async (req, res) => {
   try {
@@ -341,6 +392,7 @@ export {
   loginUser,
   registerUser,
   adminLogin,
+  createUser,
   getAllUsers,
   getUserById,
   updateUser,

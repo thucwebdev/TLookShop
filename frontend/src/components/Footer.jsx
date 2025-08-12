@@ -3,10 +3,10 @@ import { assets } from '../assets/assets'
 
 const Footer = () => {
   return (
-    <footer className='bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white'>
+    <footer className='bg-gradient-to-br flex flex-col from-gray-900 via-gray-800 to-gray-900 text-white'>
         {/* Main Footer Content */}
-        <div className='max-w-6xl mx-auto px-3 py-6'>
-            <div className='flex flex-col md:flex-row justify-between gap-12'>
+        <div className='max-w px-3 py-6 flex justify-between'>
+            <div className='md:w-full mx-8 flex flex-col md:flex-row justify-between items-center gap-12'>
                 {/* Brand Section */}
                 <div className='md:w-1/2'>
                     <a href="/" className='inline-block mb-6'>
@@ -15,8 +15,8 @@ const Footer = () => {
                     <p className='text-gray-300 text-base leading-relaxed mb-6 max-w-md'>
                         TLOOK cam kết mang đến cho khách hàng những sản phẩm chính hãng, đa dạng, phù hợp với thể trạng người Việt, đồng thời tư vấn đúng – trúng – tận tâm.
                     </p>
-                    
-                    {/* Social Media */}
+
+                     {/* Social Media */}
                     <div className='flex items-center gap-4'>
                         <p className='text-gray-400 font-medium'>Theo dõi chúng tôi:</p>
                         <div className='flex gap-3'>
@@ -38,7 +38,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-
+                
                 {/* Right Side - Links and Contact */}
                 <div className='md:w-1/2 flex flex-col sm:flex-row justify-between gap-8'>
                     {/* Company Links */}
@@ -123,7 +123,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className='border-t border-gray-700'>
-            <div className='max-w-6xl mx-auto px-4 py-4'>
+            <div className='mx-8 px-4 py-4'>
                 <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
                     <p className='text-gray-400 text-sm'>
                         © 2024 TLook Shop. Tất cả quyền được bảo lưu.

@@ -46,7 +46,7 @@ console.log(orderData);
   },[token])
 
   return (
-    <div className='border-t pt-16'>
+    <div className='border-t pt-16 pb-16 px-8 bg-white'>
 
       <div className='text-2xl'>
         <Title  text1={'Đơn hàng'} text2={'của tôi'} />

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { backendUrl } from "../App";
 import { toast } from "react-toastify";
 import axios from "axios";
@@ -16,7 +16,7 @@ const Statistics = ({ token }) => {
   const [selectedMonth, setSelectedMonth] = useState(new Date().getMonth() + 1);
 
   // Fetch overall statistics
-  const fetchOverallStats = async () => {
+  const fetchOverallStats = useCallback(async () => {
     try {
       const response = await axios.get(`${backendUrl}/api/statistics/overview`, {
         headers: { token },
@@ -25,12 +25,13 @@ const Statistics = ({ token }) => {
         setOverallStats(response.data.data);
       }
     } catch (error) {
+      console.log(error);
       toast.error("Lỗi khi tải thống kê tổng quan");
     }
-  };
+  }, [token]);
 
   // Fetch revenue statistics
-  const fetchRevenueStats = async () => {
+  const fetchRevenueStats = useCallback(async () => {
     try {
       let url = `${backendUrl}/api/statistics/revenue?period=${selectedPeriod}&year=${selectedYear}`;
       if (selectedPeriod === "day") {
@@ -44,12 +45,13 @@ const Statistics = ({ token }) => {
         setRevenueStats(response.data.data);
       }
     } catch (error) {
+      console.log(error);
       toast.error("Lỗi khi tải thống kê doanh thu");
     }
-  };
+  }, [selectedPeriod, selectedYear, selectedMonth, token]);
 
   // Fetch top products
-  const fetchTopProducts = async () => {
+  const fetchTopProducts = useCallback(async () => {
     try {
       const response = await axios.get(`${backendUrl}/api/statistics/top-products?limit=5`, {
         headers: { token },
@@ -58,12 +60,13 @@ const Statistics = ({ token }) => {
         setTopProducts(response.data.data);
       }
     } catch (error) {
+      console.log(error);
       toast.error("Lỗi khi tải sản phẩm bán chạy");
     }
-  };
+  }, [token]);
 
   // Fetch order statistics
-  const fetchOrderStats = async () => {
+  const fetchOrderStats = useCallback(async () => {
     try {
       let url = `${backendUrl}/api/statistics/orders?period=${selectedPeriod}&year=${selectedYear}`;
       if (selectedPeriod === "day") {
@@ -77,12 +80,13 @@ const Statistics = ({ token }) => {
         setOrderStats(response.data.data);
       }
     } catch (error) {
+      console.log(error);
       toast.error("Lỗi khi tải thống kê đơn hàng");
     }
-  };
+  }, [selectedPeriod, selectedYear, selectedMonth, token]);
   
   // Fetch product statistics
-  const fetchProductStats = async () => {
+  const fetchProductStats = useCallback(async () => {
     try {
       const response = await axios.get(`${backendUrl}/api/statistics/products`, {
         headers: { token },
@@ -91,12 +95,13 @@ const Statistics = ({ token }) => {
         setProductStats(response.data.data);
       }
     } catch (error) {
+      console.log(error);
       toast.error("Lỗi khi tải thống kê sản phẩm");
     }
-  };
+  }, [token]);
 
   // Load all statistics
-  const loadAllStats = async () => {
+  const loadAllStats = useCallback(async () => {
     setLoading(true);
     await Promise.all([
       fetchOverallStats(),
@@ -106,11 +111,11 @@ const Statistics = ({ token }) => {
       fetchProductStats(),
     ]);
     setLoading(false);
-  };
+  }, [fetchOverallStats, fetchRevenueStats, fetchTopProducts, fetchOrderStats, fetchProductStats]);
 
   useEffect(() => {
     loadAllStats();
-  }, [selectedPeriod, selectedYear, selectedMonth]);
+  }, [loadAllStats]);
 
   // Format currency
   const formatCurrency = (amount) => {
